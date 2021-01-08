@@ -36,7 +36,7 @@ def keypoint_clustering(kp):
     ms.fit(x)
     labels = ms.labels_
     cluster_centers = ms.cluster_centers_
-    #
+    
     print(np.unique(labels,return_counts=True)[1])
     n_cluster = len(np.unique(labels))
     return n_cluster,labels
@@ -54,3 +54,4 @@ def draw_axis(img, R, t, K):
     img = cv2.line(img, tuple(axisPoints[:,3].ravel().astype('int')[:2]), tuple(axisPoints[:,1].ravel().astype('int')[:2]), (0,255,0), 3)
     img = cv2.line(img, tuple(axisPoints[:,3].ravel().astype('int')[:2]), tuple(axisPoints[:,2].ravel().astype('int')[:2]), (0,0,255), 3)
     return img
+
